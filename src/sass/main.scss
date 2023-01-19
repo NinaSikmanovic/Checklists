@@ -1,0 +1,15 @@
+// import base
+@import "0-base/vars";
+@import "0-base/mixins";
+@import "0-base/base";
+
+// import parts
+@import "1-parts/footer";
+@import "1-parts/header";
+
+// import pages
+@import "2-pages/layout";
+@import "2-pages/home";
+@import "2-pages/checklist-setup";
+@import "2-pages/checklist-subtasks";
+@import "2-pages/subtask-setup";

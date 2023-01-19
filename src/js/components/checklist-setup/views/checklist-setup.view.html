@@ -1,0 +1,41 @@
+<md-content class="m-top">
+    <form name="projectForm">
+        <md-input-container name="inputContainer" class="md-block input-container" flex-gt-sm>
+            <label class="input-label">Checklist Name</label>
+            <input name="social" ng-model="vm.checklist.name" ng-required="true">
+            <div ng-messages="projectForm.social.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block input-container">
+            <label class="input-label">Checklist Description</label>
+            <textarea rows="3" md-maxlength="250" md-no-asterisk name="description"
+                      ng-model="vm.checklist.description"></textarea>
+            <div ng-messages="projectForm.description.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The description must be less than 250 characters long.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block input-container" flex-gt-sm>
+            <label class="input-label">Alert List</label>
+            <input name="alert" ng-model="vm.alert">
+        </md-input-container>
+        <div class="subtask-info">
+            <input type="checkbox" class="round-checkbox" ng-model="vm.checklist.lastDayOfMonth"> <i
+            ng-if="vm.checklist.lastDayOfMonth" class="fa fa-check position check-icon" aria-hidden="true"
+            ng-click=""></i>
+            <span class="margin-l"> Checklist to be completed at the last day of the month</span>
+        </div>
+        <div class="save-cancel-div" layout="row" layout-align-xs="space-around center" layout-align="center center">
+            <button ng-click="vm.backToHome()" class="cancel save-cancel-button" aria-label="Close">Cancel</button>
+            <button ng-disabled="(projectForm.social.$invalid) || (projectForm.description.$invalid)"
+                    ng-click="vm.updateChecklist()"
+                    class="save save-cancel-button"
+                    aria-label="Close">Save
+            </button>
+        </div>
+    </form>
+</md-content>
+
+
+

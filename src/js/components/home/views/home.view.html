@@ -1,0 +1,76 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div>
+    <div layout="row" layout-align="center center">
+        <md-input-container class="border-outlets md-body-2">
+            <md-select ng-model="vm.selectedOutlet"
+                       ng-model-options="{trackBy: '$value.id'}"
+                       area-label="locations">
+                <md-option ng-repeat="outlet in vm.outlets" ng-value="outlet"
+                           layout="row"
+                           ng-click="vm.listofChecklists(outlet)">
+                    <i class="fa fa-map-marker marker-icon" aria-hidden="true"></i>
+                    <span class="outlet-name">{{outlet.name}}</span>
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+<div>
+    <ul class="title-font">
+        <li ng-repeat="checklist in vm.checklists"
+            class="checklist" id="checklist-div-{{checklist.id}}"
+            md-swipe-left="onSwipeLeft(checklist.id, $event, $target)"
+            md-swipe-right="onSwipeRight(checklist.id, $event, $target)"
+            layout="row" layout-align="space-between center">
+            <div layout="row" layout-align="center center">
+                <div class="progress-bar-1">
+                    <div class="progress-bar-2">
+                        <div id="middle-circle"><span
+                            class="progress-text">{{checklist.numberOfCompleted}}/{{checklist.numberOfSubtasks}}</span>
+                        </div>
+                        <div id="progress-spinner-{{checklist.id}}" class="progress-spinner"></div>
+                    </div>
+                </div>
+                <!--                <progress-bar checklist="checklist"></progress-bar>-->
+                <a id="checklist-left-{{checklist.id}}" class="checklist-name"
+                   href="#!/app/checklist-subtasks/{{checklist.id}}">
+                    {{checklist.name}}
+                </a>
+            </div>
+            <div id="swipe-left-{{checklist.id}}" class="swipe-left">
+                <button class="btn delete-btn"
+                        ng-click="showConfirm($event, checklist)">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    <p class="md-caption">Delete</p>
+                </button>
+                <a href="#!/app/checklist-setup/{{checklist.id}}">
+                    <button ng-click="vm.getCheckListDetail(checklist)" class="btn setup-btn"
+                            aria-label="Close">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <p class="md-caption">Setup</p>
+                    </button>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div>
+    <md-button ng-click="vm.isClicked = true" class="md-fab" id="myBtn">
+        <i class="angle fa fa-plus" aria-hidden="true"></i>
+    </md-button>
+</div>
+<div ng-if="vm.isClicked">
+    <form ng-submit="vm.addChecklist()" layout="row" layout-align="center center" class="checklist-form" name="form">
+        <input ng-model="vm.newChecklist"
+               type="text" placeholder="Type a new checklist here..." aria-label="true"
+               class="newchecklist md-title " required name="input">
+        <i ng-click="vm.addChecklist()" ng-disabled="form.input.$invalid" class="fa fa-check fa-2x strike"
+           aria-hidden="true"></i>
+    </form>
+</div>
+<div class="info-div" ng-if="vm.checklists.length < 1">No checklists yet</div>
+
+
+<!--<button ng-click="vm.showProgress()">CLICK</button>-->
+
+

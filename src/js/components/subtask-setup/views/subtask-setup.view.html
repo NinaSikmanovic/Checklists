@@ -1,0 +1,46 @@
+<md-content class="m-top">
+    <form name="projectForm">
+        <md-input-container name="inputContainer" class="md-block input-container" flex-gt-sm>
+            <label class="input-label">Task Name</label>
+            <input name="social" ng-model="vm.subtask.name" minlength="3" required>
+        </md-input-container>
+        <md-input-container class="md-block input-container">
+            <label class="input-label">Task Description</label>
+            <textarea rows="3" md-maxlength="250" md-no-asterisk name="description"
+                      ng-model="vm.subtask.description"></textarea>
+            <div ng-messages="projectForm.description.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The description must be less than 250 characters long.</div>
+            </div>
+        </md-input-container>
+
+        <span ng-if="subtask.completeByTime != null" class="subtask-info"><i class="fa fa-clock-o fa-2x clock-icon" aria-hidden="true"></i>{{subtask.completeByTime}}</span>
+
+        <div class="subtask-info">
+            <input type="checkbox" class="round-checkbox day-{{vm.subtask.lastDayOfMonth}}"
+                   ng-model="vm.subtask.lastDayOfMonth"> <i ng-if="vm.subtask.lastDayOfMonth"
+                                                            class="fa fa-check position check-icon white" aria-hidden="true"
+                                                            ng-click=""></i>
+            <span class="margin-l"> Task to be completed at the last day of the month</span>
+        </div>
+        <div class="subtask-info">
+            <input type="checkbox" class="round-checkbox important-{{vm.subtask.important}}"
+                   ng-model="vm.subtask.important"> <i ng-if="vm.subtask.important"
+                                                       class="fa fa-check position check-icon white" aria-hidden="true"
+                                                       ng-click=""></i>
+            <span class="margin-l"> Important task</span>
+        </div>
+        <div class=" subtask-info">
+            <input type="checkbox" class="round-checkbox urgent-{{vm.subtask.urgent}}" ng-model="vm.subtask.urgent"><i
+            ng-if="vm.subtask.urgent" class="fa fa-check position check-icon white" aria-hidden="true" ng-click=""></i>
+            <span class="margin-l">Urgent task</span>
+        </div>
+        <div class="save-cancel-div" layout="row" layout-align-xs="space-around center" layout-align="center center">
+            <button ng-click="vm.backToPrevious()" class="cancel save-cancel-button" aria-label="Close">Cancel</button>
+            <button ng-disabled="projectForm.inputContainer.social.$invalid" ng-click="vm.updateSubtask()"
+                    class="save save-cancel-button" aria-label="Close">Save
+            </button>
+        </div>
+    </form>
+</md-content>
+

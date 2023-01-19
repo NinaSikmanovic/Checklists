@@ -1,0 +1,118 @@
+.subtask {
+    padding: 5px 0 0 15px;
+    border-bottom: 1px solid $gray;
+    font-weight: bold;
+}
+
+.subtasks-containter {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.subtask-name {
+    margin-left: 1em;
+}
+
+.checklist-name {
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 20px;
+}
+
+.size {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.note-btn {
+    background-color: $bg-color;
+}
+
+.na-btn {
+    background-color: $red;
+    padding: 6px 17px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.filter-icon {
+    margin-right: 0.5em;
+}
+
+.md-prompt-input-container {
+    .md-input {
+        border: 1px solid $greyc !important;
+    }
+}
+
+.coment-icon {
+    color: $greyc;
+    margin-left: 2.5em;
+}
+
+.completed-true {
+    background-color: $blaze-red;
+}
+
+.na-true {
+    background-color: $orange;
+}
+
+.white {
+    color: $white;
+}
+
+.check-icon {
+    margin-left: -2px;
+}
+
+.minus-icon {
+    margin-top: 2px;
+    margin-left: -1px;
+}
+
+.description {
+    color: $greyc;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+
+.exclamation-icon {
+    color: $blaze-red;
+    margin-right: 5px;
+}
+
+.star-icon {
+    color: $bg-color;
+    margin-right: 5px;
+}
+
+.time-badge {
+    background-color: #efbed0;
+    color: $blaze-red;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.subtask-information{
+    background-color: $orange;
+    color: $white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 425px) {
+ .options {
+     display: none;
+ }
+  //}
+    .subtask{
+        padding: 15px;
+    }
+}
+

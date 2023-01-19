@@ -1,0 +1,74 @@
+<div xmlns="http://www.w3.org/1999/html" class="subtasks-containter">
+    <span class="checklist-name">{{vm.checklist}}</span>
+    <div class="description">{{vm.checklistDescription}}</div>
+    <ul class="md-title title-font">
+        <li ng-repeat="subtask in vm.subtasks"
+            class="subtask expandcollapse-item"
+            id="subtask-div-{{subtask.id}}"
+            md-swipe-left="onSwipeLeft(subtask.id, $event, $target)"
+            md-swipe-right="onSwipeRight(subtask.id, $event, $target)">
+            <div layout="row" layout-align="space-between center"
+                 ng-click="active = !active"
+                 ng-class="{'expandcollapse-heading-collapsed': active, 'expandcollapse-heading-expanded': !active}">
+                <div id="subtask-left-{{subtask.id}}">
+                <span ng-if="subtask.result.completed || subtask.result.na">
+                    <button class="checkbox-round size completed-{{subtask.result.completed}} na-{{subtask.result.na}}">
+                        <i ng-if="subtask.result.completed" class="fa fa-check white check-icon" aria-hidden="true"
+                           ng-click="vm.removeDone(subtask)"></i>
+                        <i ng-if="subtask.result.na" class="fa fa-minus white minus-icon" aria-hidden="true"
+                           ng-click="vm.removeNotApplicable(subtask)"></i></button>
+                </span>
+                    <span ng-if="!(subtask.result.completed || subtask.result.na)">
+                    <button class="checkbox-round size" ng-click="vm.markAsDone(subtask)" aria-label="Close"></button>
+                </span>
+                    <span class="subtask-name">{{subtask.name}}</span>
+                    <div ng-if="subtask.result.note != null"><i class="fa fa-comment coment-icon"
+                                                                aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div id="swipe-subtask-left-{{subtask.id}}" class="swipe-subtask-left">
+                    <span ng-if="subtask.important"><i class="fa fa-star star-icon" aria-hidden="true"></i></span>
+                    <span ng-if="subtask.urgent"><i class="fa fa-exclamation-circle exclamation-icon"
+                                                    aria-hidden="true"></i></span>
+                    <span ng-if="subtask.completeByTime != null" class="time-badge">{{subtask.completeByTime}}</span>
+                    <span class="options" id="options-{{subtask.id}}">
+                        <button ng-click="showPrompt($event, subtask)" class="btn note-btn">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>
+                            <p class="md-caption">Note</p>
+                        </button>
+                        <button class="btn na-btn"
+                                ng-click="vm.markAsNotApplicable(subtask)"
+                                aria-label="Close">
+                            <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                            <p class="md-caption">N/A</p>
+                        </button>
+                        <a href="#!/app/subtask-setup/{{subtask.id}}">
+                            <button class="btn setup-btn no-margin" aria-label="Close">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <p class="md-caption">Setup</p>
+                            </button>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="slideDown" ng-hide="active">
+                <span class="subtask-information" ng-if="subtask.result.completed">Marked as done by: Synergy Suite at {{subtask.result.completedTime}}</span>
+                <span class="subtask-information"
+                      ng-if="subtask.result.na">Marked as N/A by: Synergy Suite at {{subtask.result.completedTime}}</span>
+            </div>
+        </li>
+    </ul>
+    <md-button ng-click="vm.isClicked = true" class="md-fab" id="myBtn">
+        <i class="angle fa fa-plus" aria-hidden="true"></i>
+    </md-button>
+    <div ng-if="vm.isClicked">
+        <form ng-submit="vm.addSubtask()" layout="row" layout-align="center center" class="checklist-form">
+            <input ng-model="vm.newSubtask"
+                   type="text" placeholder="Type a new subtask here..." aria-label="true"
+                   class="newchecklist md-title " required>
+            <i ng-click="vm.addSubtask()" class="fa fa-check fa-2x strike" aria-hidden="true"></i>
+        </form>
+    </div>
+</div>
+<div class="info-div" ng-if="vm.subtasks.length < 1">No subtasks yet</div>
+

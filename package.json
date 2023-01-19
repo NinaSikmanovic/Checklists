@@ -1,0 +1,44 @@
+{
+    "name": "angular-example-1",
+    "version": "1.0.0",
+    "description": "Angular.js example 1",
+    "moduleName": "app",
+    "webServer": {
+        "path": "/",
+        "port": "8024"
+    },
+    "docker": {
+        "id": "angular-example-1",
+        "name": "angular-example-1",
+        "version": "1.0.0",
+        "registry": "registry.synergysuite.net:80/synergysuite/"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "./start.sh"
+    },
+    "author": "Nikolina",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.8.3",
+        "angular-animate": "^1.8.3",
+        "angular-aria": "^1.8.3",
+        "angular-material": "^1.2.5",
+        "angular-messages": "^1.8.3",
+        "cors": "^2.8.4",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-connect": "^5.0.0",
+        "gulp-inject": "^4.2.0",
+        "gulp-jshint": "^2.0.4",
+        "gulp-ng-templates": "0.0.10",
+        "gulp-sass": "^3.1.0",
+        "gulp-shell": "^0.6.3",
+        "gulp-uglify": "^3.0.0",
+        "jshint": "^2.9.5",
+        "jshint-stylish": "^2.2.1",
+        "main-bower-files": "^2.13.1",
+        "run-sequence": "^2.1.0"
+    }
+}

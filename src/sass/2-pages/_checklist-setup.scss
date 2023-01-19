@@ -1,0 +1,68 @@
+body {
+    font-size: 16px;
+}
+
+md-content {
+    background-color: $white;
+}
+
+.input-container {
+    color: $greyc;
+    font-weight: normal;
+}
+
+md-input-container
+.md-input {
+    padding-left: 1em;
+    border-color: $greyc;
+}
+
+.checkbox-round {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.save-cancel-div {
+    margin-top: 5em;
+}
+
+.save-cancel-button {
+    border-radius: 14px;
+    padding: 1em 4em;
+
+}
+
+.cancel {
+    border: 1px solid $blaze-red;
+    background-color: $blaze-red !important;
+    color: white;
+}
+
+.save {
+    margin-left: 1em;
+    border: 1px solid $greyc;
+    background-color: $white;
+    color: $greyc;
+}
+
+.input-label {
+    font-weight: normal;
+    padding-left: 1em !important;
+}
+
+.m-top{
+    margin-top: 1em;
+}
+
+@media only screen and (max-width: 425px) {
+    .save-cancel-button {
+        padding: 1em 3em;
+    }
+}

@@ -1,0 +1,25 @@
+.header-style {
+    background-color: $orange;
+    color: #ffffff;
+    padding: 8px;
+}
+
+.footer {
+    color: $orange;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.header-title {
+    margin-left: 1em;
+}
+
+.icon-size {
+    font-size: 24px;
+}
+
+.delete-icon {
+    margin-right: 1em;
+}

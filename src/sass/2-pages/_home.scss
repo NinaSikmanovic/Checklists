@@ -1,0 +1,394 @@
+.border-outlets {
+    border: 1px solid $gray;
+    border-radius: 14px;
+    padding: 10px;
+    color: #656363;
+}
+
+.md-select-value {
+    border: none;
+}
+
+.pad-left {
+    padding: 5px;
+}
+
+.header-style-col {
+    color: #ffffff !important;
+    padding: 10px;
+}
+
+.my-title {
+    color: #F7941D;
+}
+
+.my-content {
+    color: #F7941D;
+}
+
+.my-button {
+    background-color: #3498DB;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border-color: white;
+    border: 2px solid;
+    min-width: 150px;
+    color: white;
+}
+
+.my-button:disabled {
+    opacity: 0.5;
+
+}
+
+.my-button:hover {
+    background-color: #296399;
+}
+
+.my-img-header {
+    max-height: 35px;
+}
+
+.info-text {
+    border-top: 1px solid #F7941D;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+    text-align: center;
+}
+
+.my-tab-header {
+    text-align: center;
+}
+
+.progress-div {
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.progress-my {
+
+    list-style: none;
+    margin: 0;
+    padding: 3px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    color: #849397;
+    border: 0 !important;
+    border-radius: 0px !important;
+}
+
+.progress-my > li {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.progress-my > li:before {
+    content: attr(data-step);
+    display: block;
+    margin: 0 auto;
+    background: #DFE3E4;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    margin-bottom: 0.25em;
+    line-height: 3em;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.progress-my > li:after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #DFE3E4;
+    width: 100%;
+    height: 0.5em;
+    top: 1.25em;
+    left: 50%;
+    margin-left: 1.5em \9
+;
+    z-index: 1;
+}
+
+.progress-my > li:last-child:after {
+    display: none;
+}
+
+.progress-my > li.is-complete {
+    color: #F7941D;
+}
+
+.progress-my > li.is-complete:before, .progress-my > li.is-complete:after {
+    color: white;
+    background: #F7941D;
+}
+
+.progress-my > li.is-active {
+    color: #3498DB;
+}
+
+.progress-my > li.is-active:before {
+    color: #FFF;
+    background: #3498DB;
+}
+
+/**
+ * Needed for IE8
+ */
+.progress__last:after {
+    display: none !important;
+}
+
+/**
+ * Size Extensions
+ */
+.progress--medium {
+    font-size: 1.5em;
+}
+
+.progress--large {
+    font-size: 2em;
+}
+
+/**
+ * Some Generic Stylings
+ */
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 1.5em;
+}
+
+a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.app.components.home code {
+    display: block;
+    padding: 8px;
+}
+
+.checklist {
+    border-bottom: 1px solid $gray;
+}
+
+.checklist-name {
+    text-decoration: none;
+    color: $black;
+}
+
+.checklist-name:hover {
+    text-decoration: none !important;
+    color: $black !important;
+}
+
+
+.newchecklist {
+    border: none;
+    width: 100%;
+    padding: 1em;
+}
+
+.checklist-form {
+    margin: 0 1em;
+}
+
+::placeholder {
+    font-weight: normal;
+}
+
+#myBtn {
+    position: fixed;
+    bottom: 4px;
+    right: 30px;
+    border: none;
+    outline: none;
+    background-color: $blue;
+    border-radius: 50%;
+    color: white;
+
+    .angle {
+        font-size: 20px;
+        margin-top: 18px;
+    }
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checklist-set-delete {
+    display: none;
+}
+
+.btn {
+    color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.setup-btn {
+    background-color: $greyc;
+    margin: 2px;
+}
+
+@media only screen and (max-width: 450px) {
+    .title-font {
+        font-size: 16px;
+    }
+    .checklist {
+        margin-left: 0 !important;
+    }
+    .checklist-name {
+        padding: 5px !important;
+    }
+    .newchecklist {
+        font-size: 18px;
+    }
+}
+
+.md-dialog-container {
+    md-dialog {
+        border-radius: 18px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+
+    .md-dialog-content-body {
+        color: $greyc;
+    }
+
+    .md-button.md-default-theme.md-primary, .md-button.md-primary {
+        color: $greyc;
+    }
+
+    .md-confirm-button {
+        color: $orange !important;
+        background-color: $white !important;
+    }
+}
+
+.strike {
+    background-color: rgba(248, 155, 107, 0.73);
+    color: $white;
+    border-radius: 6px;
+    padding: 5px 8px;
+}
+
+.strike:hover {
+    background-color: $orange;
+}
+
+.info-div {
+    background-color: $gray;
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 425px) {
+    .swipe-left {
+        display: none;
+    }
+    .checklist {
+        padding: 0.5em;
+    }
+    .checklist-name{
+        margin-left: 1em;
+    }
+}
+
+#demo {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    left: 800px;
+}
+#progress-spinner {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+#middle-circle {
+    position: absolute;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(248, 248, 248);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.progress-spinner{
+
+    width: 55px;
+    height: 55px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.progress-bar-2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar-1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 1em;
+}
+
+.progress-text{
+    color: $greyc;
+}
+
+.marker-icon{
+    margin-left: 5px;
+}
+.outlet-name{
+    padding: 10px;
+}
